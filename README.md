@@ -9,19 +9,35 @@ $ make virtualenv
 $ source .venv/bin/activate
 (cloudcopy) $ make install
 (cloudcopy) $ make editable
-(cloudcopy) $ ingestools
+(cloudcopy) $ cloudcopy --help
 Usage: cloudcopy [OPTIONS] COMMAND [ARGS]...
 
-  Data Ingest Tool for AWS and Azure
+  Agnostic Data Ingest Tool for Public Cloud (AWS, Azure)
 
 Options:
   --debug        debug application
   -v, --version  Show the version and exit.
-  --help         Show this message and exit.
+  -h, --help     Show this message and exit.
 
 Commands:
   aws
   azure
+  report
+  
+(cloudcopy) $ cloudcopy aws --help
+Usage: cloudcopy aws [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  -h, --help  Show this message and exit.
+
+Commands:
+  copyfile      Copy the file FILE to AWS S3
+  copyfolder    Copy folder files to AWS S3
+  copyrdb       Copy RDB data to AWS S3
+  getrdbmetada  Get RDB DLL from Database
+  
+(cloudcopy) $ cloudcopy --debug aws copyfile --transfer-type STREAM /path/to/file
+
 ```
 
 

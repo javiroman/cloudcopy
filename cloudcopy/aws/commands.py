@@ -1,5 +1,7 @@
 import click
 
+from cloudcopy.aws.libs.copydata import CopyFile
+
 
 @click.group(context_settings=dict(help_option_names=['-h', '--help']))
 def aws():
@@ -33,8 +35,22 @@ def aws_copyfile(ctx, transfer_type, file):
     elif transfer_type == 'STREAM':
         click.echo("Copy file " +  file + " in STREAM mode")
 
+    p = CopyFile()
+    p.copyFile()
+
 
 @aws.command('copyfolder')
 def aws_copyfolder():
     """Copy folder files to AWS S3"""
     click.echo("TODO: aws_copyfolder")
+
+@aws.command('copyrdb')
+def aws_copyrdb():
+    """Copy RDB data to AWS S3"""
+    click.echo("TODO: aws_copyrdb")
+
+@aws.command('getrdbmetada')
+def aws_getrdbmetadata():
+    """Get RDB DLL from Database"""
+    click.echo("TODO: aws_getrdbmetadata")
+
