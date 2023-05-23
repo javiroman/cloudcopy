@@ -11,16 +11,15 @@ clean:
 
 virtualenv:
 	virtualenv --prompt 'cloudcopy' .venv
-	.venv/bin/python setup.py develop
+	#.venv/bin/python setup.py develop
+	pip install -r requirements.txt
+	pip install --editable .
 	@echo
 	@echo "VirtualENV Setup Complete. Now run: source .venv/bin/activate"
 	@echo
 
 install:
 	python setup.py install
-
-editable:
-	pip install --editable .
 
 test:
 	python -m pytest \

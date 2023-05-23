@@ -7,8 +7,6 @@ Ingest Tools
 ```
 $ make virtualenv
 $ source .venv/bin/activate
-(cloudcopy) $ make install
-(cloudcopy) $ make editable
 (cloudcopy) $ cloudcopy --help
 Usage: cloudcopy [OPTIONS] COMMAND [ARGS]...
 
